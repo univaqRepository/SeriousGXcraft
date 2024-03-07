@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Define the Baseline element at the global scope -->
+    <xs:element name="Baseline">
+        <xs:annotation>
+            <xs:documentation>Represents the level of knowledge or understanding that the individuals that the serious game is intended for possess. 
+Age, Biological sex, gender, nationality and in turn culture, and the presence or absence of disabilities or disease can impact on the baseline knowledge of an individuals for many reasons. For example, younger individuals may have less exposure to certain topics compared to older individuals. As another example, The biological sex and the gender can influence the types of interests and experiences that an individual has. Moreover, nationality and culture play a significant role in shaping an individual's baseline knowledge, influencing their understanding of the world, their values, and their perspectives. This interplay between nationality and culture can manifest in various ways, affecting an individual's ability to comprehend information, their familiarity with certain concepts, and their approach to learning and acquiring knowledge. Finally, the presence or absence of disabilities or diseases can significantly impact the ability to access and understand information, which can influence baseline knowledge. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Technological_Skills" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Represents the level of technological expertise that the individuals that the serious game is intended for possess. This includes their knowledge of software, hardware, and digital devices. Understanding the target audience’s baseline technological skills can help designers create serious games that are appropriate for their level of expertise</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Other_Skills" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Represents the specific skills or competencies that the individuals that the serious game is intended for possess. This includes their education, training, and professional experience. Understanding the target audience’s baseline other skills can help designers create serious games that are relevant and useful to them</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- Define the "Navigation_Mechanism" element at the global scope -->
+    <xs:element name="Navigation_Mechanism" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Represents the framework that enables players to move around the game world, exploring its various environments and interacting with its elements. It encompasses the methods and controls that players utilize to navigate the game space, ensuring a smooth and enjoyable experience.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- Define the "Type of Interaction Model" element at the global scope -->
+    <xs:element name="Type_of_Interaction_Model">
+        <xs:annotation>
+            <xs:documentation>There exists several well-known types of interaction model. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="Avatar-based" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>It means that players actions consist mostly of controlling their character— i.e., their avatar—in the game world. The player acts upon the world through the avatar and, more importantly, generally can influence only the region of the game world that the avatar currently
+inhabits. </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Contestant" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>It means that the player have to answers questions and makes decisions, as if he is a contestant in a TV game show.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Multipresent" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>It means that the player can act upon several different parts of the game world at a time.  Implementing this mode requires providing ways for the player to select and pick up objects or give orders to units. An example of game implementing this type of interaction model is Chess where players may move any of their pieces (which can legally move) on any turn. </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Desktop" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>It means that the game mimics a computer (or a real) desktop and ordinarily is found only in games that represent some kind of office activity, such as business simulations.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Party-based" minOccurs="0" maxOccurs="1" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation>It means that player can control a group of characters, each with their own unique abilities and personalities. </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <!-- Define the "Digital Implementation" element at the global scope -->
+    <xs:element name="Software_implementation">
+        <xs:annotation>
+            <xs:documentation>Represents the elements that characterize the software implementation of the serious game. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Integrated_Development_Environment" type="xs:string" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the Integrated Development environment adopted for the implementation of the software. </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Language" type="xs:string" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the programming language or scripting language used to develop the serious game's core mechanics, user interface, and gameplay features. The choice of language can have a significant impact on the overall development process, performance, and compatibility of the game.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Patterns" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Represents the use of software design patterns to improve the maintainability, scalability, and reusability of the serious game's code base. Software design patterns are reusable solutions to common software design problems, providing a structured approach to developing well-architected and maintainable code.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Libraries" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Represents the use of third-party libraries or frameworks to streamline development, enhance functionality, and reduce code duplication. Libraries provide pre-written code that can be integrated into the game's codebase, saving developers time and effort on common tasks such as graphics rendering, physics simulations, and sound effects.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- Define the "Materials" element at the global scope -->
+    <xs:element name="Materials" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Refer to the collection of tools, instruments, and resources employed during the evaluation process to collect data, analyze performance, and gather feedback. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- Define the "Materials" element at the global scope -->
+    <xs:element name="Technological_Drawbacks" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Represent the limitations or challenges associated with the use of specific technologies in game development. These drawbacks can impact the overall experience of players and the effectiveness of the learning outcomes. For examples, it is well recognized that the usage of head-mounted displays is not recommended for children under the age of 10. As another examples, advanced technologies, such as VR headsets, motion capture systems, and brain-computer interfaces (BCIs), can be expensive and require specialized hardware and software. This can limit their accessibility to a wider audience. Moreover, some technological devices, such as gesture recognition and BCIs, may require a steep learning curve and specialized training for players to effectively interact with the game. This can affect the user experience and hinder the learning process.
+</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- Define the "Evaluation_method" element at the global scope -->
+    <xs:element name="Evaluation_method">
+        <xs:annotation>
+            <xs:documentation>Refers to the specific techniques or strategies employed to evaluate a serious game. Common evaluation methods for serious games include: Pre-test/Post-test Control Group Design, Surveys and Questionnaires, Think-aloud protocols, Eye-tracking, Performance Metrics (such as completion rates, time spent playing, and resource usage).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Participants" type="xs:string" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Pertains to the individuals who actively participate in the evaluation of the serious game. The selection of participants is contingent upon the type of evaluation being conducted and the chosen evaluation method.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Settings" minOccurs="1" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Refers to the environment or context in which the evaluation of a serious game takes place. Common evaluation settings for serious games include: In-lab setting, Field setting, and Hybrid setting.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="Materials" minOccurs="1"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- ROOT : SGDF-->
+    <xs:element name="SeriousGXcraft">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Target_Audience" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the group of people who will be using or interacting with the serious game. This includes their demographics, needs, and behaviors. Understanding the target audience is essential for creating a serious game that is learning effective, engaging, and user-friendly</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="Age" minOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The range of ages that the serious game is intended for. This can be a specific age range, such as 18-24, or it can be a broader range, such as 13-65+. Understanding the target audience age is important for creating a serious game that is appropriate for their developmental stage, interests, and cognitive abilities.
+
+</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="Baseline"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Biological_Sex" minOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represents the biological sex of the individuals that the serious games is intended for. This can be Male (M), Female (F), or Not Relevant (NR). Understanding the target audience's biological sex can help designers to create serious games that are inclusive and accessible to all.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="Baseline"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="sex_value">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="M"/>
+                                                <xs:enumeration value="F"/>
+                                                <xs:enumeration value="NR"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Gender" minOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represents the gender identity of the individuals that the serious game is intended for. This can be male, female, non-binary, other gender identities, or not relevant. Understanding the target audience's gender identity can help designers to create serious games that are inclusive and affirming of all genders</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="Baseline"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Nationality" minOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The nationality of the individuals that the serious game is intended for. This can be a specific nationality, such as Italian, American or Japanese, or it can be a broader category, such as Western or Eastern. Understanding the target audience's nationality can help designers to create serious games that are culturally appropriate and sensitive to the target audience's values and beliefs.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Culture" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the set of shared beliefs, values, customs, and traditions of the individuals that the serious game is intended for. This includes their language, history, religion, and social norms. Understanding the target audience's culture can help designers to create serious games that are culturally appropriate and respectful.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element ref="Baseline"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Disabilities_or_Disease" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>Represents the physical, mental, cognitive, developmental, or sensory abilities or limitations of the individuals that the serious games is intended for. This includes conditions such as visual impairments, hearing impairments, cognitive impairments, mobility impairments, and learning disabilities. Understanding the target audience's disabilities or diseases can help designers to create serious games that are accessible and usable by all.
+</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="Baseline"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Actors_involved" type="xs:string" fixed="ICT-GAME experts and PSY-PED experts" minOccurs="1" maxOccurs="1"/>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Abstract_Level" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the design aspects to be considered in the initial stage of the design process, where designers focus on conceptualizing the overall idea, purpose, and structure of the serious game. This stage is characterized by a high level of abstraction, as designers are not yet concerned with specific details or visual elements. Instead, they are focused on defining the core principles, goals, and user experience of the serious game. By considering both serious and gaming aspects at the abstract level, designers can establish a solid foundation for a successful serious game design solution. The clarity and depth of this abstract level will significantly impact the development of subsequent design levels. </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Serious_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>The serious aspects of a serious game encompass the core elements that define its educational or training purpose and ensure its effectiveness in achieving its objectives. These elements are crucial for aligning the serious game's design and mechanics with the specific learning or training goals, thereby enhancing its impact on the target audience. Specifically, focusing on the serious aspects first ensures that the serious game is designed to achieve its primary purpose. If the serious game is not effective in achieving this purpose, then no amount of fun or engaging gameplay will make up for it.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Purpose" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the overarching driving force behind the design and development of a serious game. It encapsulates the central reason for the serious game's existence, defining the specific objectives it aims to achieve and the tangible impact it strives to have on its target audience. Serious games can be used with different serious purpose, such as promoting healthy behaviors, enhancing learning and knowledge acquisition, providing realistic training and simulation experiences, raising awareness, promoting social responsibility, enhancing personal growth, developing specific skills, promoting cultural understanding, raising awareness of environmental issues, and enhancing employee training, collaboration, and decision-making.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Learning_strategy" type="xs:string" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the way of organizing and using a particular set of skills to learn content or accomplish other tasks more effectively and efficiently in school as well as in non-academic settings. Learning strategies are essential components of creating an effective learning experience. They can help individuals develop proficiency in various subject matter areas and develop new skill sets. In the context of serious games, key learning strategies are Active Learning, Learning by Doing, Problem-based Learning, Inquiry-based Learning, Constructivist Learning, and Experiential Learning. </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Content_Knowledge_model" type="xs:string" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the structured representation of the knowledge and information that is being presented or learned through the serious game. It defines the core concepts, topics, and relationships between them, providing a roadmap for the learning experience. </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Stimulation_plan" type="xs:string" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents Ia systematic and structured approach to facilitating learning by providing targeted and purposeful activities or experiences. A stimulation plan is designed to engage learners actively, encouraging their participation, exploration, and critical thinking. It outlines a sequence of instructional strategies, resources, and interventions that aim to create an environment conducive to learning. The stimulation plan should meticulously detail the specific parameters governing the serious game's usage, including the frequency of play, the contextual setting, the duration of engagement, and the nature of support provided during gameplay. For instance, it should specify whether the serious game should be played multiple times daily, once daily, or twice weekly, whether it should be accessed at home or in a classroom setting, whether the prescribed play duration should extend over a month or a year, and whether the player should engage with the serious game independently, with the guidance of a teacher, or under the supervision of a therapist. Such granularity ensures that the stimulation plan is tailored to the specific needs of the target audience and the purpose of the serious game.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Actors_involved" fixed="Mainly PSY-PED experts" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Gaming_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represents the set of elements that enhance the overall gameplay experience and contribute to player engagement. These aspects complement the serious aspects, ensuring that the game is not only effective in achieving its educational or training objectives but also enjoyable and engaging for players.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Rules" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represent the explicit guidelines and constraints that govern the game's mechanics, ensuring that players engage with the game in a consistent and predictable manner. They define the acceptable actions, interactions, and short-medium-long term game goals that shape the overall gameplay experience. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Core_Mechanics" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent the fundamental building blocks that define the game's interactions, actions, and challenges. They form the foundation upon which the game's overall structure and gameplay experience are built. Core mechanics are the heart of the game, generating the gameplay and implementing the rules. According to (Adams, 2013) Core Mechanics can be classified in 5 major types: Physics, Tactical Maneuvering, Progression, Internal Economy, and Social Interaction.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="Physics_Mechanics" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents the underlying principles of motion and force that govern the gameplay interactions and behaviors. These physics mechanics can be broadly categorized into two main types: Newtonian physics and cartoon physics. Newtonian physics adheres to the laws of classical mechanics, where objects interact with each other based on forces and mass. This approach provides a realistic and immersive gaming experience, simulating the physical world in a manner that is consistent with our everyday experiences. Cartoon physics departs from the strict rules of Newtonian physics, allowing for exaggerated and unrealistic behaviors. This approach is often employed to enhance the game's entertainment value, allowing for more dynamic and visually appealing gameplay.
+It is possible to combine these mechanics with other kinds of mechanics to produce all sorts of gameplay.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:all>
+                                                                            <xs:element name="Newtonian_Physics" minOccurs="0" maxOccurs="1"/>
+                                                                            <xs:element name="Cartoon_Physics" minOccurs="0" maxOccurs="1"/>
+                                                                        </xs:all>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="Tactical_Maneuvering_Mechanics" minOccurs="0" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represent the game's elements that allow players to plan, execute, and adapt their actions strategically within the game's environment. They enable players to make informed decisions, utilize their resources effectively, and overcome challenges. Specifically, they refers to the challenges associated with moving units through a open or semi-open space, usually a space that contains other units that are both mobile and hostile.
+
+It is possible to combine these mechanics with other kinds of mechanics to produce all sorts of gameplay. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Progression_Mechanics" minOccurs="0" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represent the game's elements that enable individuals to advance through the serious game, unlocking new content, acquiring skills or abilities, and achieving higher levels of mastery. They provide a sense of accomplishment and motivation, driving players to continue playing They can be divided into three major kinds, with different design features: progress through space, progress through time, and progress through a story. It is possible to combine these mechanics with other kinds of mechanics to produce all sorts of gameplay.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Internal_Economy_Mechanics" minOccurs="0" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents the way in which resources and entities are produced, consumed, and exchanged in quantifiable amounts within the gameplay. It is possible to combine these mechanics with other kinds of mechanics to produce all sorts of gameplay.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Social_Interaction_Mechanics" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represent the game's elements that facilitate and encourage social interactions among players, fostering collaboration, competition, and a sense of community. They play a crucial role in enhancing the overall gaming experience and achieving the game's learning objectives. It is possible to combine these mechanics with other kinds of mechanics to produce all sorts of gameplay.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:all>
+                                                                            <xs:element name="Competition" minOccurs="0" type="xs:string">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>It occurs when players have conflicting interests; that is, when the players try to accomplish mutually exclusive goals. </xs:documentation>
+                                                                                </xs:annotation>
+                                                                            </xs:element>
+                                                                            <xs:element name="Cooperation" minOccurs="0" type="xs:string">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>It occurs when the players try to achieve the same or related goals
+by working together. </xs:documentation>
+                                                                                </xs:annotation>
+                                                                            </xs:element>
+                                                                        </xs:all>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Tutorial" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the structured introduction to the game's mechanics, gameplay, and objectives. It serves as a guided learning experience that equips players with the necessary knowledge and skills to effectively navigate the game and achieve its learning goals. There are two main types of tutorial: implicit and explicit. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Implicit_tutorial" minOccurs="0" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>It is included in the main sequence levels in the serious game, letting players learn the skills they need for playing while they are actually playing.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Explicit_tutorial" minOccurs="0" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>It is separate from the main sequence levels in the serious game, letting players learn the skills they need for playing without actually playing.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Game_World" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the setting, narrative, and characters that provide the backdrop for the serious game's learning experience. It serves as a crucial element that immerses players in the game world, enhances engagement, and drives the learning process. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Scenario" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the simulated physical space that serves as the world where the serious game takes place. There are many dimensions characterizing this world: physical, temporal, environmental, emotional, and ethical. </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="Physical_dimension" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents the properties of the serious game’s scenario related to its physical appearance. Three of these properties are
+spatial dimensionality (i.e., if the scenario is 2D, 2.5D, 3D, 4D, scale (i.e., the absolute size of the physical space represented and the relative sizes of objects in the scenario), and boundaries (i.e., the presence (and their appearance) or absence of edge of the scenario).</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Temporal_dimension" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents the way that time is treated in that world and the ways in which it differs from time in the real world. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Environmental_dimension" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Describes the scenario appearance and its atmosphere. It is about what is included in the scenario, such as terrains, buildings, vehicles, furnitures, decorations, and so on. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Emotional_dimension" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>It represents the emotions that designers hope to arouse in the player through the scenario. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Ethical_dimension" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Defines what right and wrong mean within the context of the scenario, i.e., the morality of the game world. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Characters" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent the individuals who populate the game's world, including both player characters and non-player characters (NPCs). These characters play a crucial role in creating a believable and engaging narrative, enhancing immersion, and driving the learning process.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="Player_Character" type="xs:string" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>A player character or avatar represents the player's persona within the game world. It serves as an embodiment of the player's identity and actions, allowing them to interact with the game's environment, characters, and challenges. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Non_Player_Characters" type="xs:string" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represent the non-playable people that inhabit the game world. These characters play a crucial role in enhancing the game's narrative, providing guidance, and facilitating learning. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Storytelling" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the narrative framework that drives the game's gameplay, engages players, and delivers learning objectives. It serves as a powerful tool for immersing players in the game world, motivating them to continue playing, and contextualizing the learning experience. 
+</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType></xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" fixed="Mainly ICT-GAME experts" type="xs:string"/>
+                                        <xs:element name="Backward_Relationship_HighFrequency_LowCost" minOccurs="0" maxOccurs="unbounded" fixed="Serious_Aspects"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Concrete_Level" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the design aspects to be considered in the second stage of the design process, where designers focus on more concrete aspects of the serious game, such as the technology used to deliver the serious game as well as how to present and interact with it. </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Technological_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represent the underlying technical infrastructure and devices that enable the game to function and deliver its learning experience. These aspects play a critical role in determining the serious game's features, performance, and overall user experience.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Technological_Device" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represent the hardware and software tools that players interact with to engage with the serious game's content and receive feedback. These devices play a crucial role in creating an immersive and interactive learning experience. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Input_device" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the hardware or software element that allows players to interact with the game and give instructions to the game system. It acts as a bridge between the player and the game, enabling them to control the game's actions and progress. Some examples of input devices: mouse, keyboards, touchscreens, tangible objects, joysticks, brain-computer interfaces, gesture-recognition devices, cameras. </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element ref="Technological_Drawbacks"></xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Output_device" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the hardware or software element that displays information or feedback to the player. It acts as a communication channel between the serious game system and the player, allowing them to receive information about the game world, their actions, and their progress. Some examples: Desktop screen, smartphone/tablet screen, head-mounted displays, video-projections, speakers and sound systems, haptic feedback devices. </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element ref="Technological_Drawbacks"></xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" type="xs:string" fixed="Mainly ICT-GAME experts"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Presentation_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represent the visual and interactive elements that convey the serious game's content, instructions, and feedback to the player.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="UX_UI_Drawbacks" minOccurs="0" type="xs:string"></xs:element>
+                                        <xs:element name="Sensory_Elements" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represent the visual, auditory, haptic, olfactory and taste stimuli that are employed to engage the player's senses, enhance immersion, and promote learning. These elements work together to create a rich and immersive experience that can captivate players and reinforce learning experience. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Visual_elements" type="xs:string" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the graphical components that are used to create the game's world, characters, interface, and other visual elements.Some examples of Visual Elements are the main view, resources' indicators, icons, characters portraits, screen buttons and menus, texts, and visual feedback and indications.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Auditory_elements" minOccurs="1" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent the sound and music components that are used to enhance the overall gaming experience, immerse players in the game world, and reinforce learning objectives. Some examples of auditory elements are sound effects, ambient sounds, music, dialogue, voice-over narration, auditory feedback.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Haptic_elements" minOccurs="0" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent physical sensations that are transmitted to the player through specialized devices, such as vibration motors or haptic feedback vests. They play a crucial role in enhancing immersion, reinforcing learning, and providing a more tangible connection to the game world. Some examples of Haptic Elements are: vibration intensity and duration, and haptic feedback.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Olfactory_elements" minOccurs="0" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent the use of scents or smells to enhance the overall gaming experience, immersing players in the game world, and reinforcing learning. They play a crucial role in creating a more immersive and engaging environment that can evoke emotions and enhance the learning experience. For example, a serious game about exploring a forest might use scents of pine needles, damp earth, and wildflowers to create an immersive atmosphere. As another example, a serious game about cooking might use the smell of freshly baked bread or simmering stew to enhance the gameplay experience. </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="Taste_elements" type="xs:string" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represent the incorporation of flavor components to enhance the overall gaming experience, immersing players in the game world, and reinforcing learning. They play a crucial role in creating a more immersive and engaging environment that can evoke emotions and enhance the learning experience. For example, a serious game about wine tasting might use different flavors and aromas to teach players about different types of wine and their characteristics. As another example, a serious game about food safety might use flavors like bitter for spoiled food and sour for acidic food to teach players how to identify and avoid unsafe food. </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Interaction_Model" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the relationship that exists between the player’s inputs via the input
+devices and the resulting actions in the game world. It determines how the player interacts with the game world and its characters. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element ref="Type_of_Interaction_Model" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>There exist several well-known types of interaction model. </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element ref="Navigation_Mechanism" minOccurs="0"></xs:element>
+                                                    <xs:element name="Camera_model" minOccurs="1" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents how the player views the game world. It is also known as Virtual Camera. </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="Type_of_Camera_Model" minOccurs="1">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>There are several types of camera models that can be classified according to the fact if the point of view is related to a character (personal perspective) or not (impersonal perspective).</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:all>
+                                                                            <xs:element name="Personal_Perspective" minOccurs="0" maxOccurs="1">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>Type of camera model that allows players to experience the game world from the perspective of a single character. </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:all>
+                                                                                        <xs:element name="First_Person_Perspective" minOccurs="0" type="xs:boolean" maxOccurs="1">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>In the first-person perspective, used only in avatar-based interaction model, the camera takes the position of the avatar’s own eyes and is fixed with respect to the avatar. </xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Third_Person_Perspective" minOccurs="0" type="xs:boolean" maxOccurs="1">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>In the third-person perspective, used only in avatar-based interaction model, the camera follows the avatar at a fixed distance, remaining behind and slightly above the avatar as the player runs around in the world; this makes it so the player can see way beyond the avatar into the distance.</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                        </xs:element>
+                                                                                    </xs:all>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="Impersonal_Perspective" minOccurs="0" maxOccurs="1">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>Represents a type of camera models that are used to provide a bird’s-eye view of the game world. </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:all>
+                                                                                        <xs:element name="Isometric" minOccurs="0" type="xs:boolean" maxOccurs="1">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Represents a perspective projection that displays the game world from a fixed, oblique angle, typically 30-60 degrees from the horizontal plane.</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Top_down" minOccurs="0" type="xs:boolean" maxOccurs="1">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>It represents a perspective where the game world is viewed from directly overhead with the camera pointing straight down. </xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Side_Scrolling" minOccurs="0" type="xs:boolean" maxOccurs="1">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Consists of a long 2D strip in which the avatar moves left and right (mostly right), with a limited ability to move up and down. The player sees the game world from the side as the camera tracks the avatar. </xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                        </xs:element>
+                                                                                    </xs:all>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:all>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element ref="Navigation_Mechanism" minOccurs="0"/>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" type="xs:string" fixed="Mainly ICT-GAME-HCI experts"/>
+                                        <xs:element name="Backward_Relationship_HighFrequency_LowCost" minOccurs="0" maxOccurs="unbounded" fixed="Technological_Aspects"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Backward_Relationship_MediumFrequency_MediumCost" minOccurs="0" maxOccurs="unbounded" fixed="Abstract_Level"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Actual_Level" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Represents the critical juncture in the serious game development process where the focus shifts from the creative stages of conceptualizing to the practicalities of prototyping, implementation and evaluation. </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Implementation_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represents the elements standing for the comprehensive process of translating the game's design into a functional and engaging experience, encompassing both prototyping and release phases.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Prototype" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents a simplified, but testable, version of the serious game. Designers make prototypes to try out the serious game features before spending the time and money to implement them in the actual serious game. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Interaction_Level" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Represents the degree of interactivity and user engagement that a prototype element provides. This is a crucial consideration in serious game development, as it determines how effectively the prototype can simulate the intended gameplay experience and gather valuable feedback from testers. It can vary between high and low fidelity.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:choice>
+                                                                <xs:annotation>
+                                                                    <xs:documentation>It represents the degree of interactivity and user engagement that a prototype element provides. This is a crucial consideration in serious game development, as it determines how effectively the prototype can simulate the intended gameplay experience and gather valuable feedback from testers.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:element name="Low_Fidelity">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Low-fidelity prototypes prioritize conceptual clarity and rapid iteration, utilizing simplified graphics, placeholder elements, and basic interactions. These prototypes focus on the core gameplay mechanics, user interface, and overall game flow, allowing developers to gather initial feedback and refine the game's design without investing significant resources in high-end graphics or complex interactions.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="High_Fidelity">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>High-fidelity prototypes aim to replicate the intended gameplay experience as closely as possible, incorporating realistic graphics, advanced animation, and sophisticated interaction mechanics. This level of fidelity provides testers with a comprehensive understanding of the serious game's overall feel, mechanics, and user interactions.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:choice>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Type_of_Prototype" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>There are three main types of prototype that can be realized: Paper, Physical and Software prototype. </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:choice>
+                                                                <xs:element name="Paper_prototype" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents a tabletop version of the serious game—a board game, card game, or some other non-computerized implementation. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="Physical_prototype">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents a tangible representation of a game's design, incorporating physical components and media to provide a more immersive and interactive experience for testing and evaluation. n a physical prototype, you enact the player’s role in real life. This might mean trying out combat
+moves in an environment that resembles the one you plan to build in your game, or playing a game that involves physics, such as throwing objects. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType></xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="Software_prototype">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Represents the early digital representation of a serious game, developed using software development tools to allow for deeper interaction and testing.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element ref="Software_implementation" minOccurs="1"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:choice>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" fixed="ICT-GAME experts and software developers" type="xs:string"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Release" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Represents the final outcome of the serious game design and development process. </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element ref="Software_implementation" minOccurs="1" maxOccurs="1"></xs:element>
+                                                    <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" type="xs:string" fixed="ICT-GAME experts and software developers"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Evaluation_Aspects" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Represents all the elements to be addressed in order to evaluate the effectiveness, impact, and overall value of a serious game.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Evaluation_Type" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Refers to the methodological approach employed to assess the effectiveness, impact, and overall value of a serious game. These approaches can be broadly categorized into two main types: Expert-based evaluation and User-based Evaluation.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Expert-based_Evaluation" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Involves gathering feedback from professionals with expertise in serious game design, development, and evaluation. This approach provides valuable insights from experienced individuals who can assess the game's technical aspects, pedagogical effectiveness, and overall quality</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Evaluation_method" minOccurs="1"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="User-based_Evaluation" minOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Focuses on gathering feedback from the target audience of the serious game, typically involving potential or actual players. This approach aims to understand the game's usability, engagement, and overall impact from the perspective of the people who will be using it.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Evaluation_method" minOccurs="1"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Evaluation_Focus" minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Refers to the specific aspects or goals that are prioritized during the evaluation process. Specifically, this focus can be directed towards the technological aspects, encompassing the game's performance, graphics, and compatibility, ensuring a seamless and enjoyable gaming experience. Alternatively, the evaluation lens can zoom in on the pedagogical aspects, evaluating the game's ability to effectively impart knowledge and skills, aligning with its intended learning objectives. Finally, the focus can gravitate towards the engagement aspects, gauging the game's capacity to captivate players, fostering motivation, and ensuring overall enjoyment. By establishing a clear evaluation focus, serious game developers can tailor the evaluation process to the game's unique characteristics and objectives, leading to more impactful and insightful feedback.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:annotation>
+                                                        <xs:documentation>Refers to the specific aspects or goals that are prioritized during the evaluation process. Specifically, this focus can be directed towards the technological aspects, encompassing the game's performance, graphics, and compatibility, ensuring a seamless and enjoyable gaming experience. Alternatively, the evaluation lens can zoom in on the pedagogical aspects, evaluating the game's ability to effectively impart knowledge and skills, aligning with its intended learning objectives. Finally, the focus can gravitate towards the engagement aspects, gauging the game's capacity to captivate players, fostering motivation, and ensuring overall enjoyment. By establishing a clear evaluation focus, serious game developers can tailor the evaluation process to the game's unique characteristics and objectives, leading to more impactful and insightful feedback.</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:element name="Technological_Evaluation" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Technological evaluation assesses the overall technical aspects of a serious game, ensuring that the game functions as intended and provides a smooth and enjoyable gameplay experience across various hardware and software platforms. For example, it is possible to evaluate the game's stability, frame-rate, and resource utilization to ensure a consistent and responsive gaming experience. Moreover, it Is possible to evaluate the game's input methods and user interface to ensure intuitiveness, accessibility, and responsiveness. In addition, it is possible to evaluate the usability of the serious game. Finally, it possible to evaluate if there are any technical issues, bugs, or glitches that may hinder the gameplay experience or cause frustration for users and address them.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType></xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Learning_Evaluation" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Assesses the effectiveness of a serious game in achieving its intended learning objectives. It focuses on measuring the extent to which players acquire knowledge, develop skills, and demonstrate the desired cognitive changes as a result of interacting with the game.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType></xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Engagement_Evaluation" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Assesses the overall ability of a serious game to captivate and maintain player interest, ensuring that the game effectively delivers an enjoyable and engaging experience.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType></xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Actors_involved" minOccurs="1" maxOccurs="1" type="xs:string" fixed="Mainly ICT-PED experts"/>
+                                        <xs:element name="Backward_Relationship_HighFrequency_LowCost" fixed="Implementation_Aspects" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Backward_Relationship_MediumFrequency_MediumCost" minOccurs="0" maxOccurs="unbounded" fixed="Concrete_Level"/>
+                            <xs:element name="Backward_Relationship_LowFrequency_HighCost" minOccurs="0" maxOccurs="unbounded" fixed="Abstract_Level"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
